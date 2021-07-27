@@ -1,6 +1,5 @@
 title: "Getting started"
 arrange:
-    - single_db.md
-    - multi_db.md
+    - use_cases.md
     - validation.md
     - filtering.md
