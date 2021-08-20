@@ -57,7 +57,7 @@ bibliography: paper.bib
 
 In recent decades, improvements in algorithms, hardware, and theory have enabled crystalline materials to be studied computationally at the atomistic level with great accuracy and speed.
 To enable dissemination, reproducibility, and reuse, many digital crystal structure databases have been created and curated, ready for comparison with existing infrastructure that stores structural characterizations (e.g., diffraction) of real crystals.
-These databases have been made available with bespoke application programming interfaces (APIs) to allow for automated and often open access to the underlying data.
+Each database will typically have a bespoke, stateless, web-based Application Programming Interface (API); a users can submit a query via a specially-crafted URLs (which encodes a more general HTTP request).
 Such esoteric and specialized APIs incur maintenance and usability costs upon both the data providers and consumers, who may not be software specialists.
 
 The [OPTIMADE API](https://optimade.org) specification [@andersen2021optimade; @OPTIMADE_spec], released in July 2020, aimed to reduce these costs by designing a common API for use across a consortium of collaborating materials databases and beyond.
@@ -67,9 +67,10 @@ The repository presented here, `optimade-python-tools`, provides a modular refer
 # Statement of need
 
 In order to accommodate existing materials database APIs, the OPTIMADE API specification allows for flexibility in the specific data served, but enforces a simple yet domain-specific filter language on well-defined resources.
-However, this flexibility could be daunting to database providers, likely acting to increase the barrier to hosting an OPTIMADE REST API.
+However, this flexibility could be daunting to database providers, likely acting to increase the barrier to hosting an OPTIMADE API.
 `optimade-python-tools` aims to catalyse the creation of APIs from existing and new data sources by providing a configurable and modular reference server implementation for hosting materials data in an OPTIMADE-compliant way.
 The repository hosts the `optimade` Python package, which leverages the modern Python libraries pydantic [@pydantic] and FastAPI [@FastAPI] to specify the data models and API routes defined in the OPTIMADE API specification, additionally providing a schema following the OpenAPI format [@OpenAPI].
+As this package was developed concomitantly with the OPTIMADE specification itself, the present authors are not aware of any other generic packages with similar functionality.
 Two storage back-ends are supported out of the box, with full filter support for databases that employ the popular [MongoDB](https://www.mongodb.com) or [Elasticsearch](https://elastic.co) frameworks.
 
 # Functionality
@@ -108,7 +109,7 @@ The Python classes within the `optimade` package have been extended to make use 
 # Acknowledgements
 
 All authors acknowledge contributions and feedback from other members of the OPTIMADE consortium, with special thanks to Michael Wu, Leopold Talirz, Thomas Purcell, Abhijith Gopakumar, Andrius Merkys and Fawzi Mohamed for their direct contributions to the `optimade` package.
-M.E. would like to acknowledge the EPSRC Centre for Doctoral Training in Computational Methods for Materials Science for funding under grant number EP/L015552/1 and support from the European Union's Horizon 2020 research and innovation program under the European Union's Grant agreement No. 951786 (NOMAD CoE).
+M.L.E. would like to acknowledge the EPSRC Centre for Doctoral Training in Computational Methods for Materials Science for funding under grant number EP/L015552/1 and support from the European Union's Horizon 2020 research and innovation program under the European Union's Grant agreement No. 951786 (NOMAD CoE).
 C.W.A. acknowledges financial support by the MARKETPLACE project, which is funded by Horizon 2020 under H2020-NMBP-25-2017 call with Grant agreement number: 760173 as well as the National Centres of Competence in Research (NCCR) Materials' revolution: Computational Design and Discovery of Novel Materials (MARVEL) created by the Swiss National Science Foundation (SNSF).
 S.D. acknowledges financial support by the U.S. Department of Energy, Office of Science, Office of Basic Energy Sciences, Materials Sciences and Engineering Division under Contract No. DE-AC02-05-CH11231 (Materials Project program KC23MP).
 M.S. acknowledges support from the European Union's Horizon 2020 research and innovation program under the European Union's Grant agreement No. 676580 (NoMaD) and No. 951786 (NOMAD CoE) as well as financial support from the Max Planck research network on big-data-driven materials science (BiGmax).
