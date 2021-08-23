@@ -57,7 +57,7 @@ bibliography: paper.bib
 
 In recent decades, improvements in algorithms, hardware, and theory have enabled crystalline materials to be studied computationally at the atomistic level with great accuracy and speed.
 To enable dissemination, reproducibility, and reuse, many digital crystal structure databases have been created and curated, ready for comparison with existing infrastructure that stores structural characterizations (e.g., diffraction) of real crystals.
-Each database will typically have a bespoke, stateless, web-based Application Programming Interface (API); a users can submit a query via a specially-crafted URLs (which encodes a more general HTTP request).
+Each database will typically have a bespoke, stateless, web-based Application Programming Interface (API); users can submit a query via specially-crafted URLs.
 Such esoteric and specialized APIs incur maintenance and usability costs upon both the data providers and consumers, who may not be software specialists.
 
 The [OPTIMADE API](https://optimade.org) specification [@andersen2021optimade; @OPTIMADE_spec], released in July 2020, aimed to reduce these costs by designing a common API for use across a consortium of collaborating materials databases and beyond.
