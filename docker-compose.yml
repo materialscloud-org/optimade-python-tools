@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        CONFIG_FILE: mcloud/config.json
+        CONFIG_FILE: config.json
     environment:
       MAIN: main_index
     ports:

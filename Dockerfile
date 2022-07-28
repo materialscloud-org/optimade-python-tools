@@ -8,8 +8,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 # Use MaterialsCloud data
-COPY mcloud ./mcloud
-ENV OPTIMADE_INDEX_LINKS_PATH /app/mcloud/index_links.json
+COPY index_links.json ./index_links.json
+ENV OPTIMADE_INDEX_LINKS_PATH /app/index_links.json
 
 # Copy repo contents
 COPY setup.py setup.cfg LICENSE MANIFEST.in README.md .docker/run.sh ./
