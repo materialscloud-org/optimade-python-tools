@@ -10,5 +10,6 @@ services:
         CONFIG_FILE: config.json
     environment:
       MAIN: main_index
+      OPTIMADE_INDEX_LINKS_PATH: /app/index_links.json
     ports:
       - '3214:5000'
